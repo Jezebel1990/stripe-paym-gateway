@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.text {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
