@@ -1,7 +1,8 @@
 import React from 'react'; 
 import { useState } from 'react';
+import logo from "../assets/logo.png";
 import pic from "../assets/chocolate.png";
-import logo from "../assets/logo.png"
+import ZoomImage from './ZoomImage';
 
 const Home = () => {
 
@@ -34,7 +35,7 @@ const decrement = () => {
    <img className='h-24'src={logo} alt= ""/>
     <div className="flex flex-col lg:flex-row justify-center items-center mx-auto w-full my-16 border-2 bg-[#f6d538] border-slate-400 shadow-md py-4">
       <div className="flex lg:justify-end justify-center items-center mx-auto my-24 w-full lg:w-6/12">
-        <img src={pic} alt=""/>
+        <ZoomImage src={pic} alt="Image" />
       </div>
       <div className="flex flex-col lg:w-6/12 w-full py-8">
         <div className='text-4xl font-bold text-blue-700'>
