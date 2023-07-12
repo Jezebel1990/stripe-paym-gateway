@@ -28,12 +28,14 @@ app.post("/create-checkout-session", async (req, res)=>{
                 },
                 quantity: item.quantity
                }
-            })
+            }),
+            success_url: 'http://127.0.0.1:5173/success',
+            cancel_url: 'http://127.0.0.1:5173/cancel'
         })
+        res.json({url: session.url})
 
     }catch(e){
         res.status(500).json({error:e.message})
     }
-}
-
-)
+})
+app.listen(5000)
