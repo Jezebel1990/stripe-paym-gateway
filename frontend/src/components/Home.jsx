@@ -27,10 +27,35 @@ const decrement = () => {
   }
 }
 
+const checkout = () => {
+  fetch("backend api here", {
+    method: "POST",
+    headers: {
+      "Content-Type":"application/json"
+    },
+    mode: "cors",
+    body: JSON.stringify({
+      items: [
+        {id:1, quantity: quantity, price: itemPrice, name: itemName}
+      ]
+    })
+  })
+  .then(res => {
+    if (res.ok) return res.json()
+    return res.json().then(json => Promise.reject(json))
+  })
+  .then(({url})=>{
+    window.location = url
+  })
+  .catch(e => {
+    console.log(e.error)
+  })
+}
+
   return (
  
 <div className="absolute inset-0">
-  <img className="object-cover w-full h-full" src="https://i.imgur.com/1me1qZr.jpg" alt="Descrição da imagem"/>
+  <img className="object-cover w-full h-full" src="https://i.imgur.com/1me1qZr.jpg" alt="Imagem de fundo"/>
   <div className="absolute inset-0 flex flex-col justify-center items-center">
    <img className='h-24'src={logo} alt= ""/>
     <div className="flex flex-col lg:flex-row justify-center items-center mx-auto w-full my-16 border-2 bg-[#f6d538] border-slate-400 shadow-md py-4">
