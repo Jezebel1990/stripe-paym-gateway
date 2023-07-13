@@ -4,6 +4,11 @@ Welcome, this project is a mini M&M'S e-commerce that allows selecting the quant
 
 
 ##  👀 Preview
+![Captura de tela 2023-07-13 162733](https://github.com/Jezebel1990/stripe-paym-gateway/assets/75287031/8b9c322a-0938-44bf-9ccb-3be28925f274)
+![Captura de tela 2023-07-13 162841](https://github.com/Jezebel1990/stripe-paym-gateway/assets/75287031/a0ddd0f2-e49c-42c0-9e39-63635c7b41ab)
+![Captura de tela 2023-07-13 163158](https://github.com/Jezebel1990/stripe-paym-gateway/assets/75287031/cb077d32-ced2-4822-9cd2-fc852c647e98)
+![Captura de tela 2023-07-13 163248](https://github.com/Jezebel1990/stripe-paym-gateway/assets/75287031/2e3ed09c-3768-4c20-946f-6dc5ffc4a0ef)
+![Captura de tela 2023-07-13 164029](https://github.com/Jezebel1990/stripe-paym-gateway/assets/75287031/c5264438-ce38-4970-987c-e0001001d70e)
 
 
 ## ⚙️ Technologies
@@ -41,8 +46,11 @@ npm start
 npm install
 # and 
 npm run dev
+```
 
-## 📚 License
-<p>This project is under the MIT license. See the LICENSE for more information.</p>
+
+
+##  📚 License
+This project is under the MIT license. See the LICENSE for more information.
 
 Made with ♥ by [Jezebel Guedes](https://www.linkedin.com/in/jezebel-guedes/) 👋 Get in touch!

@@ -10,11 +10,11 @@ const Success = () => {
         <span className='text-yellow-600 text-center mt-8 text-3xl font-semibold'>
           Seu pedido está sendo processado pelo nosso sistema.
           </span>
-          <div className='flex justify-end items-center mx-auto my-24 w-60'>
+          <div className='flex justify-end items-center mx-auto my-10 w-90'>
 <img src={success} alt=''/>
       </div>
       <div className='my-10 mx-auto'>
-<Link to="/" className='underline text-xl underline-offset-4'
+<Link to="/" className='text-yellow-600 underline text-xl underline-offset-4' 
 >Voltar</Link>
       </div>
     </div>
