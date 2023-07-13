@@ -3,6 +3,7 @@ import { useState } from 'react';
 import logo from "../assets/logo.png";
 import pic from "../assets/chocolate.png";
 import ZoomImage from './ZoomImage';
+import 'whatwg-fetch';
 
 const Home = () => {
 
@@ -20,37 +21,49 @@ const decrement = () => {
   if(quantity <=1){
     setQuantity(1);
     setFinalAmount(itemPrice);
-  }
-  if(quantity > 1){
+  } else {
     setQuantity(quantity - 1);
     setFinalAmount(finalAmount - itemPrice);
   }
-}
+};
 
 const checkout = () => {
-  fetch("backend api here", {
+  fetch("http://localhost:5000/create-checkout-session", {
     method: "POST",
     headers: {
-      "Content-Type":"application/json"
+      "Accept": "application/json",
+      "Content-Type":"application/json;charset=UTF-8",
     },
-    mode: "cors",
+
     body: JSON.stringify({
       items: [
-        {id:1, quantity: quantity, price: itemPrice, name: itemName}
-      ]
-    })
+        { 
+          id: 1, 
+          quantity: quantity, 
+          price: itemPrice, 
+          name: itemName 
+        },
+      ],
+    }),
   })
   .then(res => {
-    if (res.ok) return res.json()
-    return res.json().then(json => Promise.reject(json))
+    if (res.ok) return res.json();
+    return res.json().then(json => Promise.reject(json));
   })
-  .then(({url})=>{
-    window.location = url
+  .then(json => {
+    console.log(json);
+     if (json.url) {
+       const {url} = json;
+       window.location.href = url;
+    } else {
+      console.log("Invalid response");
+    }
   })
   .catch(e => {
-    console.log(e.error)
-  })
+    console.log(e.error);
+  });
 }
+
 
   return (
  
@@ -58,7 +71,7 @@ const checkout = () => {
   <img className="object-cover w-full h-full" src="https://i.imgur.com/1me1qZr.jpg" alt="Imagem de fundo"/>
   <div className="absolute inset-0 flex flex-col justify-center items-center">
    <img className='h-24'src={logo} alt= ""/>
-    <div className="flex flex-col lg:flex-row justify-center items-center mx-auto w-full my-16 border-2 bg-[#f6d538] border-slate-400 shadow-md py-4">
+    <div className="flex flex-col lg:flex-row justify-center items-center mx-auto w-9/12 my-12 border-2 bg-[#f6d538] border-slate-400 shadow-md py-3">
       <div className="flex lg:justify-end justify-center items-center mx-auto my-24 w-full lg:w-6/12">
         <ZoomImage src={pic} alt="Image" />
       </div>
@@ -80,7 +93,7 @@ const checkout = () => {
 <div className='my-6 text-xl'>Total:
 <span className='text-green-700 text-3xl font-bold pl-3'>R${finalAmount}</span></div>
 <div className='my-6'>
-  <button className='bg-pink-500 text-white px-8 py-4 rounded-md text-2xl font-semibold'>
+  <button onClick={checkout} className='bg-pink-500 text-white px-8 py-4 rounded-md text-2xl font-semibold'>
     FINALIZAR COMPRA
   </button>
 

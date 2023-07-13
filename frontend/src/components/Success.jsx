@@ -8,7 +8,7 @@ const Success = () => {
       <div className='max-w-7xl rounded flex flex-col'>
         <span className='text-green-600 text-5xl font-bold'>Pagamento aprovado</span>
         <span className='text-yellow-600 text-center mt-8 text-3xl font-semibold'>
-          Seu pagamento já foi aprovado pelo nosso sistema.
+          Seu pedido está sendo processado pelo nosso sistema.
           </span>
           <div className='flex justify-end items-center mx-auto my-24 w-60'>
 <img src={success} alt=''/>

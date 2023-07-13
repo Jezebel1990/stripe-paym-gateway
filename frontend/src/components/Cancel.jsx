@@ -10,11 +10,11 @@ const Cancel = () => {
       <span className='text-orange-500 text-center mt-8 text-2xl font-semibold'>
           Tente mais tarde.
         </span>
-        <div className='flex justify-end items-center mx-auto my-12 w-96'>
+        <div className='flex justify-end items-center mx-auto my-50 w-90'>
           <img src={cancel} alt=""/>
         </div>
 <div className='my-10 mx-auto'>
-<Link to="/" className='underline text-xl underline-offset-4'>Voltar</Link>
+<Link to="/" className='text-orange-500 underline text-xl underline-offset-4'>Voltar</Link>
 </div>
       </div>
     </div>
