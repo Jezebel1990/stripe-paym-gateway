@@ -5,7 +5,7 @@ const app = express()
 const cors = require("cors")
 app.use(
     cors({
-        origin: "http://localhost:5173"
+        origin: "https://stripe-paym-gateway.vercel.app/"
     })
 )
 app.use(express.json());
@@ -28,8 +28,8 @@ app.post("/create-checkout-session", async (req, res) => {
                 quantity: item.quantity
                };
             }),
-            success_url: 'http://localhost:5173/success',
-            cancel_url: 'http://localhost:5173/cancel'
+            success_url: 'https://stripe-paym-gateway.vercel.app/success',
+            cancel_url: 'https://stripe-paym-gateway.vercel.app/cancel'
         });
         res.json({ url: session.url });
     }catch(e){
