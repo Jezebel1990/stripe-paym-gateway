@@ -5,7 +5,11 @@ const app = express()
 const cors = require("cors")
 app.use(
     cors({
-        origin: "https://stripe-paym-gateway.vercel.app/"
+        origin: [
+        "https://stripe-paym-gateway.vercel.app",
+        "https://stripe-paym-gateway-git-main-jezebel1990.vercel.app",
+        "https://stripe-paym-gateway-5djt82bfy-jezebel1990.vercel.app"
+        ]
     })
 )
 app.use(express.json());
@@ -28,8 +32,8 @@ app.post("/create-checkout-session", async (req, res) => {
                 quantity: item.quantity
                };
             }),
-            success_url: 'https://stripe-paym-gateway.vercel.app/success',
-            cancel_url: 'https://stripe-paym-gateway.vercel.app/cancel'
+            success_url: `${req.headers.origin}/success`,
+            cancel_url: `${req.headers.origin}/cancel`
         });
         res.json({ url: session.url });
     }catch(e){
