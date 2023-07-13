@@ -28,7 +28,7 @@ const decrement = () => {
 };
 
 const checkout = () => {
-  fetch("http://localhost:5000/create-checkout-session", {
+  fetch("https://stripe-server-f0ww.onrender.com/create-checkout-session", {
     method: "POST",
     headers: {
       "Accept": "application/json",
