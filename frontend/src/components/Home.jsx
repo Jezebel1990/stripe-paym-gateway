@@ -91,7 +91,7 @@ const checkout = () => {
 </div>
 
 <div className='my-6 text-xl'>Total:
-<span className='text-green-700 text-3xl font-bold pl-3'>R${finalAmount}</span></div>
+<span className='text-green-700 text-3xl font-bold pl-3'>R${finalAmount.toFixed(2)}</span></div>
 <div className='my-6'>
   <button onClick={checkout} className='bg-pink-500 text-white px-8 py-4 rounded-md text-2xl font-semibold'>
     FINALIZAR COMPRA
